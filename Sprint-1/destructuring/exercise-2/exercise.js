@@ -70,3 +70,29 @@ let hogwarts = [
     occupation: "Teacher",
   },
 ];
+
+function nameAndHoues(arr){
+  let namesOfGryffindor =""
+for ( let i =0; i<arr.length; i++){
+  const { firstName, house,lastName} = arr[i]
+  if (house === "Gryffindor"){
+    namesOfGryffindor += `${firstName} ${lastName}\n`
+
+  }
+}
+return namesOfGryffindor
+}
+
+function staffPets(arr) {
+  let namesOfTeachersPets =""
+  for (let i = 0; i < arr.length; i++) {
+    const { firstName, pet, occupation, lastName } = arr[i];
+    if (occupation == "Teacher" && pet !== null)
+      namesOfTeachersPets += `${firstName} ${lastName}`
+  }
+  return namesOfTeachersPets
+}
+ 
+
+console.log(nameAndHoues(hogwarts))
+console.log(staffPets(hogwarts))
