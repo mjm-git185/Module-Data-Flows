@@ -71,28 +71,26 @@ let hogwarts = [
   },
 ];
 
-function nameAndHoues(arr){
-  let namesOfGryffindor =""
-for ( pepole of hogwarts){
-  const { firstName, house,lastName} = pepole
-  if (house === "Gryffindor"){
-    namesOfGryffindor += `${firstName} ${lastName}\n`
-
+function nameAndHoues(arr) {
+  let namesOfGryffindor = "";
+    for (pepole of hogwarts) {
+      const { firstName, house, lastName } = pepole;
+      if (house === "Gryffindor") {
+      namesOfGryffindor += `${firstName} ${lastName}\n`;
+    }
   }
-}
-return namesOfGryffindor
+  return namesOfGryffindor;
 }
 
 function staffPets(arr) {
-  let namesOfTeachersPets =""
+  let namesOfTeachersPets = "";
   for (let i = 0; i < arr.length; i++) {
     const { firstName, pet, occupation, lastName } = arr[i];
     if (occupation == "Teacher" && pet !== null)
-      namesOfTeachersPets += `${firstName} ${lastName}`
+      namesOfTeachersPets += `${firstName} ${lastName}`;
   }
-  return namesOfTeachersPets
+  return namesOfTeachersPets;
 }
- 
 
-console.log(nameAndHoues(hogwarts))
-console.log(staffPets(hogwarts))
+console.log(nameAndHoues(hogwarts));
+console.log(staffPets(hogwarts));

@@ -26,7 +26,7 @@ function receipt(arr){
  totals = quantity + itemName + unitPricePenceAsCash
 //  totals = `${quantity}     ${itemName}        ${unitPricePenceAsCash}`
  
- console.log("%c",totals,"font-size: 28pt")
+ console.log("%c",totals, );
  
  }
 
