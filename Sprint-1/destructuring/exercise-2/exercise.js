@@ -73,8 +73,8 @@ let hogwarts = [
 
 function nameAndHoues(arr){
   let namesOfGryffindor =""
-for ( let i =0; i<arr.length; i++){
-  const { firstName, house,lastName} = arr[i]
+for ( pepole of hogwarts){
+  const { firstName, house,lastName} = pepole
   if (house === "Gryffindor"){
     namesOfGryffindor += `${firstName} ${lastName}\n`
 
