@@ -8,13 +8,13 @@ let order = [
 ];
 
 
-function receipt(arr){
+  function receipt(arr){
 
- let totalPrice =0
- let subTotal = 0 
- let totals =""
- for(let i=0; i<order.length; i++){
-  const{itemName,quantity,unitPricePence} = arr[i]
+    let totalPrice =0
+    let subTotal = 0 
+    let totals =""
+      for(let i=0; i<order.length; i++){
+    const{itemName,quantity,unitPricePence} = arr[i]
 
 
    subTotal = unitPricePence * quantity;
