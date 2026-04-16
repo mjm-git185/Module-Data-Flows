@@ -35,8 +35,8 @@ function submit() {
     
     title == "" ||
     pages == ""||
-    author == ""||
-    check == "")
+    author == ""
+    )
 
    {
     alert("Please fill all fields!");
@@ -64,10 +64,15 @@ function render() {
   //delete old table
   for (let n = rowsNumber - 1; n > 0; n--) {
     table.deleteRow(n);
-  }
+ 
+ }
+
+
+ 
   //insert updated row and cells
   let length = myLibrary.length ;
   for (let i = 0; i <= length; i++) {
+    
     let row = table.insertRow(1);
     let titleCell = row.insertCell(0);
     let authorCell = row.insertCell(1);
@@ -77,8 +82,11 @@ function render() {
     titleCell.innerHTML = myLibrary[i].title;
     authorCell.innerHTML = myLibrary[i].author;
     pagesCell.innerHTML = myLibrary[i].pages;
+  
+    //deleteCell.innerHTML = delBut[i]
 
-  }
+
+  
 
     //add and wait for action for read/unread button
     let changeBut = document.createElement("button");
@@ -86,7 +94,7 @@ function render() {
     changeBut.className = "btn btn-success";
     wasReadCell.appendChild(changeBut);
     let readStatus = "";
-    if (myLibrary[i].check != false) {
+    if (myLibrary[i].check == true) {
       readStatus = "Yes";
     } else {
       readStatus = "No";
@@ -94,19 +102,25 @@ function render() {
     changeBut.innerText = readStatus;
 
     changeBut.addEventListener("click", function () {
-      myLibrary[i].check = myLibrary[i].check;
-      render();
-    });
 
+    if( myLibrary[i].check == true){
+      myLibrary[i].check = false;
+    }
+    else {
+      myLibrary[i].check = true;
+    }
+
+      render();
+  });
     //add delete button to every row and render again
-    let delButton = document.createElement("button");
-    delBut.id = i + 5;
+    let delBut = document.createElement("button");
+    delBut.id = i ;
     deleteCell.appendChild(delBut);
     delBut.className = "btn btn-warning";
     delBut.innerHTML = "Delete";
-    delBut.addEventListener("clicks", function () {
+    delBut.addEventListener("click", function () {
       alert(`You've deleted title: ${myLibrary[i].title}`);
       myLibrary.splice(i, 1);
       render();
-    });
+    })};
   }
