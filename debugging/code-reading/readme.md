@@ -16,6 +16,8 @@ Take a look at the following code:
 ```
 
 Explain why line 5 and line 8 output different numbers.
+line 5 logs the "let x" from the local scope of the function 
+where as line 8 uses the "let x" from line one in the global scope
 
 ## Question 2
 
@@ -34,6 +36,13 @@ console.log(y);
 ```
 
 What will be the output of this code. Explain your answer in 50 words or less.
+you will get 
+10
+undefined
+undefined
+the x is in the global scope so accsesable to f1
+f1 has no return value to log 
+and the y is only in the local scope of the function
 
 ## Question 3
 
