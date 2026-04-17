@@ -49,10 +49,10 @@ function render() {
   const table = document.getElementById("display");
   const rowsNumber = table.rows.length;
   //delete old table
-
- for (let n = rowsNumber - 1;  n > 0; n--) {
-  table.deleteRow(n); 
+while (table.rows.length > 1) {
+  table.deleteRow(1); 
   }
+
 
   //insert updated row and cells
   const length = myLibrary.length;
