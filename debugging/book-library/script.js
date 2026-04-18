@@ -24,7 +24,7 @@ function populateStorage() {
 
 function submit() {
   const titleInput = document.getElementById("title").value.trim();
-  const authorInput = document.getElementById("author").value.trimStart();
+  const authorInput = document.getElementById("author").value.trim();
   const pagesInput = Number(document.getElementById("pages").value);
   const checkInput = document.getElementById("check").checked;
   if (
