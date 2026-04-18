@@ -2,17 +2,15 @@
 <html lang="en">
   <head>
     <title>Library Books</title>
-    <meta
-      charset="utf-8"
-    >
+    <meta charset="utf-8" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    >
-    <link rel="stylesheet" type="text/css" href="style.css">
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
 
   <body>
@@ -35,7 +33,7 @@
           name="title"
           placeholder="Title"
           required
-        >
+        />
         <label for="author">Author: </label>
         <input
           type="text"
@@ -44,7 +42,7 @@
           name="author"
           placeholder="Author"
           required
-        >
+        />
         <label for="pages">Pages:</label>
         <input
           type="number"
@@ -52,23 +50,24 @@
           id="pages"
           name="pages"
           placeholder="Between 1 and 16000"
+          min="1"
           max="16000"
           required
-        >
+        />
         <label class="form-check-label">
           <input
             type="checkbox"
             class="form-check-input"
             id="check"
             value=""
-          >Read
+          />Read
         </label>
         <input
           type="submit"
           value="Submit"
           class="btn btn-primary"
           onclick="submit();"
-        >
+        />
       </div>
     </div>
 
@@ -93,6 +92,6 @@
       </tbody>
     </table>
 
-    <script src="script.js" ></script>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -23,14 +23,15 @@ function populateStorage() {
 //via Book function and start render function
 
 function submit() {
-  const titleInput = document.getElementById("title").value.trimStart();
+  const titleInput = document.getElementById("title").value.trim();
   const authorInput = document.getElementById("author").value.trimStart();
-  const pagesInput = document.getElementById("pages").value;
+  const pagesInput = Number(document.getElementById("pages").value);
   const checkInput = document.getElementById("check").checked;
   if (
     titleInput == "" ||
     pagesInput == "" ||
     authorInput == "" ||
+    pagesInput == NaN ||
     pagesInput < 1 ||
     pagesInput > 16000
   ) {
@@ -92,9 +93,11 @@ function render() {
     button.className = "btn btn-warning";
     button.textContent = "Delete";
     button.addEventListener("click", function () {
+      const deletedBook = myLibrary[i].title;
       myLibrary.splice(i, 1);
+
       render();
-      alert(`You've deleted title: ${myLibrary[i].title}`);
+      alert(`You've deleted title: ${deletedBook}`);
     });
   }
 }
